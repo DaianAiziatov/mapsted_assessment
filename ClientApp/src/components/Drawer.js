@@ -6,8 +6,10 @@ class Drawer extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            data: []
+            data: [],
+            drawedComponent: []
         }
+        this.drawArray = this.drawArray.bind(this)
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
@@ -21,26 +23,48 @@ class Drawer extends Component {
         }
     }
 
-    drawArray(arr) {
+    drawArray(array) {
+
         function isNumeric(n) {
             return !isNaN(parseFloat(n)) && isFinite(n);
         }
 
-        if (arr == null){
+        if (array == null){
             return
         }
-        const canvas = this.refs.canvas
+
+        /*const canvas = this.refs.canvas
         const ctx = canvas.getContext('2d')
         var maxHeight = canvas.width
         var height = 10
         var space = 1
         ctx.clearRect(0, 0, canvas.width, canvas.height)
-        ctx.font = "9px serif"
+        ctx.font = "9px serif"*/
+        this.setState(() => {
+            let newDrawedComponent = array.map(element => {
+                let style = {
+                    textAlign: 'right',
+                    background: 'blue',
+                    color: 'white',
+                    width: isNumeric(element) ? element * 8 + "px" : 10,
+                    height: 20
+                }
+                return (
+                     <div>
+                        <div style={style}>{element}</div>
+                     </div>
+                )
+            })
+            return ({
+                drawedComponent: newDrawedComponent
+            })
+        })
 
-        for (var i = 0; i < arr.length; i++) {
+       /*for (var i = 0; i < arr.length; i++) {
             ctx.fillStyle = '#61C5FF'
 
             if (isNumeric(arr[i])) {
+
                 ctx.fillRect(0, i * (height+space), parseInt(arr[i]) * 5, height);
                 ctx.fillStyle = '#240be46'
 
@@ -49,7 +73,7 @@ class Drawer extends Component {
                 ctx.fillText(arr[i], 0, i * (height+space) + height)
             }
 
-        }
+        }*/
     }
 
     animation(array) {
@@ -62,7 +86,7 @@ class Drawer extends Component {
     render() {
         return (
             <div>
-                <canvas ref="canvas" />
+                {this.state.drawedComponent}
             </div>
         )
     }
