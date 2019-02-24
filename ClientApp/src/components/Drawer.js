@@ -32,14 +32,7 @@ class Drawer extends Component {
         if (array == null){
             return
         }
-
-        /*const canvas = this.refs.canvas
-        const ctx = canvas.getContext('2d')
-        var maxHeight = canvas.width
-        var height = 10
-        var space = 1
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        ctx.font = "9px serif"*/
+        
         this.setState(() => {
             let newDrawedComponent = array.map(element => {
                 let style = {
@@ -59,21 +52,6 @@ class Drawer extends Component {
                 drawedComponent: newDrawedComponent
             })
         })
-
-       /*for (var i = 0; i < arr.length; i++) {
-            ctx.fillStyle = '#61C5FF'
-
-            if (isNumeric(arr[i])) {
-
-                ctx.fillRect(0, i * (height+space), parseInt(arr[i]) * 5, height);
-                ctx.fillStyle = '#240be46'
-
-                ctx.fillText(parseInt(arr[i]), parseInt(arr[i]) * 5, i * (height+space) + height);
-            } else {
-                ctx.fillText(arr[i], 0, i * (height+space) + height)
-            }
-
-        }*/
     }
 
     animation(array) {
