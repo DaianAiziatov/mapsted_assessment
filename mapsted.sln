@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mapsted", "mapsted.csproj", "{B3C3DC60-6F45-4369-98AC-D8AE833EC868}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3C3DC60-6F45-4369-98AC-D8AE833EC868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C3DC60-6F45-4369-98AC-D8AE833EC868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C3DC60-6F45-4369-98AC-D8AE833EC868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C3DC60-6F45-4369-98AC-D8AE833EC868}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
